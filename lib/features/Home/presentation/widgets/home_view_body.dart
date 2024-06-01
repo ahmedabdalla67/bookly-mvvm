@@ -39,9 +39,12 @@ class HomeviewBody extends StatelessWidget {
           ),
         ),
         SliverList.builder(
-          itemBuilder: (context, index) => const Padding(
-            padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 30),
-            child: BestSellerListViewItem(),
+          itemBuilder: (context, index) => const AspectRatio(
+            aspectRatio: 6/2,
+            child: Padding(
+              padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 30),
+              child: BestSellerListViewItem(),
+            ),
           ),
           itemCount: 10,
         )

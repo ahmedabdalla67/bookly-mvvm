@@ -12,9 +12,9 @@ class RelatedBooksListView extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: 10,
         itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 5.0),
-            child: CustomBookImage(),
+          return const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 5.0),
+            child: CustomBookImage(imageUrl: 'https://images.pexels.com/photos/757889/pexels-photo-757889.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',),
           );
         },
       ),

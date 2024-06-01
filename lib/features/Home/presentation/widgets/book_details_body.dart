@@ -24,7 +24,7 @@ class BookDetailsBody extends StatelessWidget {
                 const AppBarBookDetails(),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: width),
-                  child: const CustomBookImage(),
+                  child: const CustomBookImage(imageUrl: 'https://images.pexels.com/photos/757889/pexels-photo-757889.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',),
                 ),
                 const Text(
                   'SOUL',
