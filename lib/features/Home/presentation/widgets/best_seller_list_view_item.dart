@@ -1,4 +1,3 @@
-
 import 'package:bookly_app/core/utils/router.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/Home/data/models/book_model/book_model.dart';
@@ -24,7 +23,8 @@ class BestSellerListViewItem extends StatelessWidget {
         height: 125,
         child: Row(
           children: [
-            CustomBookImage(imageUrl: bookModel.volumeInfo.imageLinks.thumbnail),
+            CustomBookImage(
+                imageUrl: bookModel.volumeInfo.imageLinks.thumbnail),
             const SizedBox(
               width: 30,
             ),
@@ -35,7 +35,7 @@ class BestSellerListViewItem extends StatelessWidget {
                 children: [
                   SizedBox(
                       width: MediaQuery.of(context).size.width * 0.6,
-                      child:  Text(
+                      child: Text(
                         bookModel.volumeInfo.title!,
                         style: Styles.textStyle20,
                         maxLines: 2,
@@ -44,11 +44,10 @@ class BestSellerListViewItem extends StatelessWidget {
                   const SizedBox(
                     height: 3,
                   ),
-                   Text(
+                  Text(
                     bookModel.volumeInfo.authors![0],
                     style: Styles.textStyle12,
                   ),
-                 
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

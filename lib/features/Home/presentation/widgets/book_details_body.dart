@@ -1,4 +1,5 @@
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/features/Home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/features/Home/presentation/widgets/app_bar_book_detail.dart';
 import 'package:bookly_app/features/Home/presentation/widgets/book_rate.dart';
 import 'package:bookly_app/features/Home/presentation/widgets/custom_book_image.dart';
@@ -7,8 +8,8 @@ import 'package:bookly_app/features/Home/presentation/widgets/related_book_list_
 import 'package:flutter/material.dart';
 
 class BookDetailsBody extends StatelessWidget {
-  const BookDetailsBody({super.key});
-
+  const BookDetailsBody({super.key, required this.bookModel});
+final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width * 0.22;
@@ -24,17 +25,18 @@ class BookDetailsBody extends StatelessWidget {
                 const AppBarBookDetails(),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: width),
-                  child: const CustomBookImage(imageUrl: 'https://images.pexels.com/photos/757889/pexels-photo-757889.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',),
+                  child:  CustomBookImage(imageUrl: bookModel.volumeInfo.imageLinks.thumbnail,),
                 ),
-                const Text(
-                  'SOUL',
+                 Text(
+                  bookModel.volumeInfo.title!,
+                  textAlign: TextAlign.center,
                   style: Styles.textStyle30,
                 ),
                 const SizedBox(
                   height: 3,
                 ),
-                const Text(
-                  'Olivia Wilson',
+                 Text(
+                  bookModel.volumeInfo.authors![0],
                   style: Styles.textStyle16,
                 ),
                 const SizedBox(

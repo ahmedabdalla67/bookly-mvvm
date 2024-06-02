@@ -15,15 +15,14 @@ class BookHomeDetailsView extends StatefulWidget {
 class _BookHomeDetailsViewState extends State<BookHomeDetailsView> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     BlocProvider.of<SimilarBooksCubit>(context).fetchSimilarBooks(category: widget.bookModel.volumeInfo.categories![0]);
   }
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return  Scaffold(
       body: SafeArea(
-        child: BookDetailsBody(),
+        child: BookDetailsBody(bookModel:widget.bookModel ,),
       ),
     );
   }
